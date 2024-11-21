@@ -19,7 +19,8 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Crear Perfil'),
-        foregroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -36,7 +37,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
               controller: ageC,
               labelText: 'Edad',
               keyboardType: TextInputType.number,
-              icon: Icons.cake, 
+              icon: Icons.calendar_today, 
             ),
             const SizedBox(height: 10),
             CustomTextField(
@@ -86,4 +87,3 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
     );
   }
 }
-

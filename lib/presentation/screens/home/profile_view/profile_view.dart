@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:user_app/presentation/widgets/custom_button.dart';
+import 'package:user_app/presentation/widgets/custom_profile.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -12,28 +13,29 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Perfil'),
-        foregroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Nombre: ${userProfile['name']}',
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              const SizedBox(height: 20),
+              ProfileItem(
+                icon: Icons.person,
+                label: 'Nombre',
+                value: userProfile['name'] ?? '',
               ),
-              const SizedBox(height: 10),
-              Text(
-                'Edad: ${userProfile['age']}',
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ProfileItem(
+                icon: Icons.calendar_today,
+                label: 'Edad',
+                value: userProfile['age'] ?? '',
               ),
-              const SizedBox(height: 10),
-              Text(
-                'Ocupación: ${userProfile['occupation']}',
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ProfileItem(
+                icon: Icons.work,
+                label: 'Ocupación',
+                value: userProfile['occupation'] ?? '',
               ),
               const SizedBox(height: 30),
               CustomButton(
@@ -52,4 +54,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
